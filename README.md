@@ -6,9 +6,6 @@
 
 Includes the installer, uninstaller and Bay of Pigs — Coastal Artillery map. Requires **OpenRA release-20250330 on Windows**.
 
-Choose **Spearhead-GitHub.zip**, not GitHub's automatic **Source code (zip)** download. [Release notes](https://github.com/Vintorez91/Spearhead-AI/releases/tag/v0.3.1-preview).
-
-
 An experimental community bot developed through human spectator feedback, C# changes, controlled scenarios and full-game benchmarks, with assistance from OpenAI Codex. This is an independent project, not an official OpenRA or OpenAI release.
 
 ## Requirements and installation

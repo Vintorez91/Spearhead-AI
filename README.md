@@ -1,18 +1,30 @@
 # Spearhead AI for OpenRA Red Alert
 
+## Download
+
+[**Download Spearhead AI v0.3.1-preview — Windows installer ZIP**](https://github.com/Vintorez91/Spearhead-AI/releases/download/v0.3.1-preview/Spearhead-GitHub.zip)
+
+Includes the installer, uninstaller and Bay of Pigs — Coastal Artillery map. Requires **OpenRA release-20250330 on Windows**.
+
+Choose **Spearhead-GitHub.zip**, not GitHub's automatic **Source code (zip)** download. [Release notes](https://github.com/Vintorez91/Spearhead-AI/releases/tag/v0.3.1-preview).
+
+
 An experimental community bot developed through human spectator feedback, C# changes, controlled scenarios and full-game benchmarks, with assistance from OpenAI Codex. This is an independent project, not an official OpenRA or OpenAI release.
 
 ## Requirements and installation
 
-Windows; **OpenRA release-20250330** with the Red Alert game assets already installed. Other versions are not yet supported by this package.
+Windows; **OpenRA release-20250330**, with Red Alert game assets already installed.
 
-1. Download the release ZIP and extract the whole folder.
-2. Open PowerShell in that folder and run `./Start-Spearhead.ps1 -EngineDir "C:/Program Files/OpenRA"` (substitute your installation path).
-3. In the separate Spearhead Red Alert menu, create a skirmish and select **Spearhead AI** from the bot list. Original bots remain available for comparison.
+1. Download the installer ZIP using the link above and extract the entire folder.
+2. Double-click **Install and Start Spearhead.cmd**. OpenRA is detected automatically, or you can select its program folder. Allow Windows administrator approval if requested.
+3. In normal Red Alert, create a skirmish and select **Spearhead AI** from the bot list. The original bots remain available. Your usual Red Alert shortcut also works after installation.
+4. Optionally select **Bay of Pigs - Coastal Artillery** to try the included custom map.
 
-The launcher loads this mod beside the existing installation. It does not replace stock Red Alert files. All participants in a multiplayer game need the same mod. It is not added to the stock Red Alert menu unless that menu is launched with this mod.
+To remove the extension, run **Uninstall Spearhead.cmd**.
 
-**Normal starts:** this user package excludes the test-world rules, automatic construction-yard deployment and free power plant/barracks/refinery. Lobby starting-unit settings apply. The benchmark below used the faster test start, so it does not establish the same win rate under ordinary starting conditions.
+The installer registers the bot DLL, configuration and map dependencies in the RA manifest, with a backup. Standard unit and weapon files are not replaced. Custom coastal-gun rules apply only to the included map. Clean second-PC and multiplayer verification remain pending.
+
+**Normal starts:** no extra starting buildings are injected. The benchmark below used equal accelerated test bases, so it does not establish the same win rate under ordinary starting conditions.
 
 ## Features
 
@@ -38,7 +50,7 @@ These are implemented behaviors, not guarantees that every map, route or unit co
 | spearhead-economy | 24 | 18 | 6 |
 | spearhead-recon-v2 | 4 | 4 | 0 |
 
-The schedule covers original Rush, Normal, Turtle and Naval bots, maps including Polar Disorder, Warwind, Crossfire and the custom Bay of Pigs remake, Allied/Soviet factions and swapped starts. See [test data](docs/benchmark-snapshot.csv) and [methodology](docs/TESTING.md). One loss was explicitly confirmed by the user after closing a spectator match; its provenance is retained. Remaining matches are not counted. Some time-limit results can be assessed using economic and army advantages; this is distinct from an engine-declared win.
+The schedule covers original Rush, Normal, Turtle and Naval bots, maps including Polar Disorder, Warwind, Crossfire and the custom Bay of Pigs remake, Allied/Soviet factions and swapped starts. Test data and methodology are included in the downloaded ZIP under `docs/benchmark-snapshot.csv` and `docs/TESTING.md`. One loss was explicitly confirmed by the user after closing a spectator match; its provenance is retained. Remaining matches are not counted. Some time-limit results can be assessed using economic and army advantages; this is distinct from an engine-declared win.
 
 The newest revision has only the completed rows shown above. Earlier revisions cannot be treated as evidence for every newest feature. Controlled scouting tests were stopped at the user's request; their mixed results do not prove improved resistance to Rush.
 
@@ -46,11 +58,11 @@ The newest revision has only the completed rows shown above. Earlier revisions c
 
 Development started from OpenRA's existing bot modules, then added C# behavior and YAML configuration. A human watched games and identified issues such as delayed expansion, aimless movement, dangerous infantry attacks, inaccessible capture targets and inactive ships. Codex assisted with implementation, compilation, instrumentation and test analysis.
 
-This snapshot contains **60 C# files and 7,264 C# lines**, including inherited/adapted bot code, logging and scenario fixtures. These are code-size statistics, not a measure of intelligence or independently authored lines. No model training or live language-model service is required while playing.
+This snapshot contains **61 C# files and 7,342 C# lines**, including inherited/adapted bot code, logging and scenario fixtures. These are code-size statistics, not a measure of intelligence or independently authored lines. No model training or live language-model service is required while playing.
 
 ## Build from source
 
-Install the .NET 6 SDK, then run `./Build.ps1 -EngineDir "C:/Program Files/OpenRA"`. The build references engine assemblies from your release-20250330 installation. Corresponding source is included for the shipped DLL; fixtures remain in the assembly but are not enabled by the user mod rules.
+The corresponding source and build files are included in the release ZIP. Install the .NET 6 SDK, then run `./Build.ps1 -EngineDir "C:/Program Files/OpenRA"`. The build references engine assemblies from your release-20250330 installation. Corresponding source is included for the shipped DLL; fixtures remain in the assembly but are not enabled by the user mod rules.
 
 ## Feedback
 
@@ -58,4 +70,4 @@ Please report the map, factions, opponent bot, game version, approximate game ti
 
 ## License and credits
 
-GNU GPL version 3; see [LICENSE](LICENSE) and [NOTICE](NOTICE.md). Includes adapted OpenRA bot code. Game assets and engine binaries are not bundled.
+GNU GPL version 3; see [LICENSE](LICENSE) and the NOTICE.md included in the release ZIP. Includes adapted OpenRA bot code. Game assets and engine binaries are not bundled.

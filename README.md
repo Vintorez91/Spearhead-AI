@@ -21,8 +21,6 @@ To remove the extension, run **Uninstall Spearhead.cmd**.
 
 The installer registers the bot DLL, configuration and map dependencies in the RA manifest, with a backup. Standard unit and weapon files are not replaced. Custom coastal-gun rules apply only to the included map. Clean second-PC and multiplayer verification remain pending.
 
-**Normal starts:** no extra starting buildings are injected. The benchmark below used equal accelerated test bases, so it does not establish the same win rate under ordinary starting conditions.
-
 ## Features
 
 - Scouting and remembered contacts instead of deliberately querying every hidden enemy as an attack target; GPS revelation is used when available.
